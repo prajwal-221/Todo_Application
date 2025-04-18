@@ -125,6 +125,6 @@ from mongoengine import connect
 
 connect(
     db='todo_db',
-    host='localhost',
+    host='db',
     port=27017
 )
