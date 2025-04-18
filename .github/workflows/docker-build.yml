@@ -25,9 +25,9 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t prajwalheaptrace/Todo_Application:latest .
+          docker build -t prajwalheaptrace/todo_application:latest .
 
       - name: Push Docker image
         if: github.event_name == 'push'
         run: |
-          docker push prajwalheaptrace/Todo_Application:latest
+          docker push prajwalheaptrace/todo_application:latest
