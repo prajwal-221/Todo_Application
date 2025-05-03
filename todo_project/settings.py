@@ -50,11 +50,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todo_project.wsgi.application'
 
-# Database / MongoDB
+# # Database / MongoDB locally 
+# connect(
+#     db='todo_db',
+#     host='mongodb://localhost:27017/',
+#     port=27017,
+# )
+
+
+#To run the application in a Docker Container
+from mongoengine import connect
+
 connect(
     db='todo_db',
-    host='mongodb://localhost:27017/',
-    port=27017,
+    host='mongodb://db:27017/todo_db',  # 'db' is the service name in docker-compose.yml
+    alias='default'
 )
 
 # REST Framework: only JSON, custom exception handler
